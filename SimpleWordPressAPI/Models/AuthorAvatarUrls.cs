@@ -1,4 +1,4 @@
-﻿namespace SimpleWordPressAPI.Models
+﻿namespace WordPressDotNet.Models
 {
     public class AuthorAvatarUrls
     {

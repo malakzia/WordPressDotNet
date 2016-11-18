@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SimpleWordPressAPI.Models
+namespace WordPressDotNet.Models
 {
     public class ImageMeta
     {

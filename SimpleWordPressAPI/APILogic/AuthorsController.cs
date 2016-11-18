@@ -1,4 +1,4 @@
-﻿using SimpleWordPressAPI.Models;
+﻿using WordPressDotNet.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleWordPressAPI.APILogic
+namespace WordPressDotNet.APILogic
 {
     public class AuthorsController
     {

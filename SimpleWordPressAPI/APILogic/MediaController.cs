@@ -1,4 +1,4 @@
-﻿using SimpleWordPressAPI.Models;
+﻿using WordPressDotNet.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleWordPressAPI.APILogic
+namespace WordPressDotNet.APILogic
 {
     public class MediaController
     {
@@ -37,7 +37,7 @@ namespace SimpleWordPressAPI.APILogic
         /// <param name="page">Page number</param>
         /// <param name="perPage">Results you want per page</param>
         /// <returns></returns>
-        public async Task<IEnumerable<Media>> GetPostsAsync(int page = 0, int perPage = 10)
+        public async Task<IEnumerable<Media>> GetPostsAsync(int page = 1, int perPage = 10)
         {
             var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format("/wp-json/wp/v2/media?page={0}&per_page={1}", page, perPage));
             _media = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Media>>(downloadedJson);

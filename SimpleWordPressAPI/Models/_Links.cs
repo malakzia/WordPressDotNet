@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleWordPressAPI.Models
+namespace WordPressDotNet.Models
 {
     public class _Links
     {

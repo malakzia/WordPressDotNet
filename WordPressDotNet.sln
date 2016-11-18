@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWordPressAPI", "SimpleWordPressAPI\SimpleWordPressAPI.csproj", "{CC91D84C-7C2E-452E-83DD-666A71687C8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPressDotNet", "SimpleWordPressAPI\WordPressDotNet.csproj", "{CC91D84C-7C2E-452E-83DD-666A71687C8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,9 @@
-﻿using SimpleWordPressAPI.Models;
+﻿using WordPressDotNet.Models;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SimpleWordPressAPI.APILogic
+namespace WordPressDotNet.APILogic
 {
     public class CommentsController
     {
@@ -28,7 +28,7 @@ namespace SimpleWordPressAPI.APILogic
         /// <param name="page">Page number for results</param>
         /// <param name="perPage">Number of results per page</param>
         /// <returns></returns>
-        public async Task<IEnumerable<Comment>> GetCommentsAsync(int postId, int page = 0, int perPage = 10)
+        public async Task<IEnumerable<Comment>> GetCommentsAsync(int postId, int page = 1, int perPage = 10)
         {
             var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format("/wp-json/wp/v2/comments?page={0}&per_page={1}&post={2}", page, perPage, postId));
             _posts = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Comment>>(downloadedJson);

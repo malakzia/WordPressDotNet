@@ -1,5 +1,5 @@
-﻿using SimpleWordPressAPI.Models;
-using SimpleWordPressAPI.APILogic;
+﻿using WordPressDotNet.Models;
+using WordPressDotNet.APILogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
