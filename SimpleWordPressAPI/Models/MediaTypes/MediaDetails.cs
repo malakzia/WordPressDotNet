@@ -1,4 +1,4 @@
-﻿namespace WordPressDotNet.Models
+﻿namespace WordPressDotNet.Models.MediaTypes
 {
     public class MediaDetails
     {

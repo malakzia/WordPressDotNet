@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WordPressDotNet.Models.LinkTypes;
 
 namespace WordPressDotNet.Models
 {
@@ -11,5 +7,4 @@ namespace WordPressDotNet.Models
         public Self[] self { get; set; }
         public Collection[] collection { get; set; }
     }
-
 }
