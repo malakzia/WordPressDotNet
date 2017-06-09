@@ -1,6 +1,6 @@
 ﻿namespace WordPressDotNet.Models
 {
-    public class Meta
+    public class AuthorLinks : _Links
     {
     }
 }

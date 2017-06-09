@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WordPressDotNet.Models
 {
@@ -20,8 +16,8 @@ namespace WordPressDotNet.Models
         public string link { get; set; }
         public string status { get; set; }
         public string type { get; set; }
-        public AuthorAvatarUrls author_avatar_urls { get; set; }
-        public Meta meta { get; set; }
+        public AvatarUrls author_avatar_urls { get; set; }
+        public List<Meta> meta { get; set; }
         public _Links _links { get; set; }
     }
 }

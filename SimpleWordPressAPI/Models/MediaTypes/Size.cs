@@ -1,7 +1,8 @@
-﻿namespace WordPressDotNet.Models
+﻿namespace WordPressDotNet.Models.MediaTypes
 {
-    public class Large
+    public class Size
     {
+
         public string file { get; set; }
         public int width { get; set; }
         public int height { get; set; }

@@ -1,9 +1,6 @@
 ﻿using WordPressDotNet.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WordPressDotNet.APILogic
@@ -12,20 +9,14 @@ namespace WordPressDotNet.APILogic
     {
         private const string URL = "/wp-json/wp/v2/posts/";
 
-        //enum WPJsonAPIVersion
-        //{
-        //    Old,
-        //    New
-        //}
-
         private string _baseUrl;
         private IEnumerable<Post> _posts;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Url">Wordpress Url</param>
-        public PostsController(string Url/*, WPJsonAPIVersion api*/)
+        /// <param name="Url">Wordpress Site Url</param>
+        public PostsController(string Url)
         {
             _baseUrl = Url;
         }
@@ -38,10 +29,11 @@ namespace WordPressDotNet.APILogic
         /// <returns></returns>
         public async Task<IEnumerable<Post>> GetPostsAsync(int page = 1, int perPage = 10)
         {
-            var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format("/wp-json/wp/v2/posts?page={0}&per_page={1}", page, perPage));
+            var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format(URL + "?page={0}&per_page={1}", page, perPage));
             _posts = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Post>>(downloadedJson);
             return _posts;
         }
+
         /// <summary>
         /// Get a single post. 
         /// </summary>
@@ -53,6 +45,5 @@ namespace WordPressDotNet.APILogic
             var post = Newtonsoft.Json.JsonConvert.DeserializeObject<Post>(downloadedJson);
             return post;
         }
-        
     }
 }

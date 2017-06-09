@@ -7,20 +7,20 @@ namespace WordPressDotNet.APILogic
 {
     public class CommentsController
     {
-
         private const string URL = "/wp-json/wp/v2/comments/";
 
-        //enum WPJsonAPIVersion
-        //{
-        //    Old,
-        //    New
-        //}
         private string _baseUrl;
         private IEnumerable<Comment> _posts;
-        public CommentsController(string Url/*, WPJsonAPIVersion api*/)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Url">Wordpress Site Url</param>
+        public CommentsController(string Url)
         {
             _baseUrl = Url;
         }
+
         /// <summary>
         /// Get all comments, against a post.
         /// </summary>
@@ -30,10 +30,11 @@ namespace WordPressDotNet.APILogic
         /// <returns></returns>
         public async Task<IEnumerable<Comment>> GetCommentsAsync(int postId, int page = 1, int perPage = 10)
         {
-            var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format("/wp-json/wp/v2/comments?page={0}&per_page={1}&post={2}", page, perPage, postId));
+            var downloadedJson = await (new HttpClient()).GetStringAsync(_baseUrl + string.Format(URL + "?page={0}&per_page={1}&post={2}", page, perPage, postId));
             _posts = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Comment>>(downloadedJson);
             return _posts;
         }
+
         /// <summary>
         /// Get a single comment by ID.
         /// </summary>
@@ -45,6 +46,5 @@ namespace WordPressDotNet.APILogic
             var post = Newtonsoft.Json.JsonConvert.DeserializeObject<Comment>(downloadedJson);
             return post;
         }
-    
-}
+    }
 }
